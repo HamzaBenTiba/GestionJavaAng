@@ -1,0 +1,47 @@
+
+<div class="container">
+<div class="row">
+  <div class="col-4">
+
+    <button class="btn btn-sm btn-success" (click)="goTo()">Ajouter Commande</button>
+  </div>
+  <div class="col-4">
+    <form>
+       <div class="form-group">
+         <label for="keyword">Mot clé</label>
+         <input [(ngModel)]="keyword" placeholder="Tapez votre mot de clet de recherche ici!!" type="text" name="keyword" id="keyword" class="form-control">
+         <button class="btn btn-sm btn-success" (click)="chercher()">recherche</button>
+       </div>
+    </form>
+  </div>
+<table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Marque</th>
+        <th scope="col">Model</th>
+        <th scope="col">Caracteristique</th>
+        <th colspan="2">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of pageCommande.content">
+        <th scope="row">{{p.code}}</th>
+         <td>{{p.numero}}</td>
+        <td>{{p.prixTotal}}</td>
+        <td>{{p.etat}}</td>
+        <td><a class="btn-info btn">edit</a></td>
+        <td><a class="btn-danger btn">delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="container">
+   <ul class="pagination">
+    <li *ngFor="let p of pages; let i=index" class="page-link " [ngClass]=" i == currentPage ? 'active' :''">
+      <a class="clickable" (click)="onCommandePage(i)"> {{i}}</a>
+    </li>
+  </ul>
+    </div>
+</div>
+  </div>
+

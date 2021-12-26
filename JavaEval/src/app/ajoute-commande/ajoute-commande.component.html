@@ -1,0 +1,65 @@
+<div class="container spacer">
+  <div class="row">
+  <div class="col-4">
+  <div class="card">
+    <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="addProduct()">
+        <div class="form-group">
+          <label for="cars">Select produit:</label>
+
+          <select class="form-select" aria-label="Default select example" name="code_Commande">
+            <option selected>Open this select menu</option>
+        <option *ngFor="let p of pageCommande" value="{{p.id}}">{{p.code}}</option>
+
+          </select>
+            </div>
+          <div class="form-group">
+            <label for="price">Prix</label>
+            <input ngModel placeholder="Price" type="number" name="price" id="price" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="quantite">Quantite</label>
+            <input ngModel placeholder="Quantite" type="number" name="quantity" id="quantite" class="form-control">
+          </div>
+          <div class="form-group">
+
+          </div>
+          <button class="btn btn-sm btn-primary" (click)="addProduct()">Ajouter</button>
+        </form>
+      </div>
+  </div>
+  </div>
+  <div class="col-8">
+    <div class="card">
+      <div class="card-body">
+
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">model</th>
+              <th scope="col">PrixUnitaire</th>
+              <th scope="col">Quantite</th>
+              <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of tmp">
+              <th scope="row">{{p.id}}</th>
+               <td>{{p.code}}</td>
+              <td>{{p.qte}}</td>
+              <td>d</td>
+              <td><a class="btn-danger btn">delete</a></td>
+            </tr>
+              </tbody>
+          </table>
+          <div class="form-group">
+            <label for="prixTotal">Prix Total</label>
+          <input ngModel placeholder="prixTotal" type="number" name="prixTotal" id="prixTotal" class="form-control">
+          <button class="btn btn-sm btn-primary">Save Commande</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+  <div class="col-4">
+  <div class="card">
+    <div class="card-body">
+        <form #f="ngForm">
+        <div class="form-group">
+          <label for="code">Code</label>
+          <input [(ngModel)]="produit.code" placeholder="code" type="text" name="code" id="code" class="form-control">
+            </div>
+          <div class="form-group">
+            <label class="control-label">Marque</label>
+            <input [(ngModel)]="produit.marque" placeholder="marque" type="text"  name="marque" id="marque" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="model">Model</label>
+            <input [(ngModel)]="produit.model" placeholder="model" type="text" name="model" id="model" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="caracteristique">Caracteristique</label>
+            <input [(ngModel)]="produit.caracteristique" placeholder="caracteristique" type="text" name="caracteristique" id="caracteristique" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="prixUnitaire">Prix Unitaire</label>
+            <input [(ngModel)]="produit.prixUnitaire" placeholder="prixUnitaire" type="number" name="prixUnitaire" id="prixUnitaire" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="quantite">Quantite</label>
+            <input [(ngModel)]="produit.quantity" placeholder="Quantite" type="number" name="quantity" id="quantite" class="form-control">
+          </div>
+          <div class="form-group">
+
+          </div>
+          <button class="btn btn-sm btn-primary" (click)="saveProduit()" >Ajouter</button>
+        </form>
+      </div>
+  </div>
+  </div>
